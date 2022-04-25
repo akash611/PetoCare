@@ -8,24 +8,25 @@
 }
 .header{
     width:100%;
-    background-image: linear-gradient(to right , #0000ff , #ff0000);
+    background-image: linear-gradient(to right , #0000ff , #ff0000 )!important;
 
 }
-a{
+
+.header a{
     color: white !important;
     font-weight: 500;  
 }
-a:hover{
+.header a:hover{
     color:red !important;
 }
-.btn{
+.header .btn{
     background-color:blue;
     margin-right: 10px;
     font-weight: 600;
     color:white;
     margin-bottom: 5px;
 }
-.btn:hover{
+.header .btn:hover{
     background-color: white;
     color:red;
 }
@@ -34,20 +35,26 @@ footer{
     background-image: linear-gradient(to right , #ff0000 , #0011ff);
     margin-top: auto;
 }
-   footer a:link {
-        text-decoration: none;
-      }
+footer a:link {
+    text-decoration: none;
+    color:white;
+}
       
-      footer a:visited {
-        text-decoration: none;
-      }
+footer a:visited {
+    text-decoration: none;
+}
       
-      footer a:hover {
-        text-decoration: none;
-        color:purple;
-      }
+footer a:hover {
+    text-decoration: none;
+    color:rgb(255, 0, 0);
+}
       
-      footer  a:active {
-        text-decoration: none;
-      }
-
+footer  a:active {
+    text-decoration: none;
+}
+footer p{
+    color: white !important;
+}
+#idx p{
+    color: #ff0000;
+}
