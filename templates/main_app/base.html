@@ -29,18 +29,18 @@
               <a class="nav-link "  href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="{% url 'services' %}">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
+              <a class="nav-link" href="{% url 'about' %}">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
             </li>
           </ul>
             <ul class="navbar-nav ml-auto">
-              <button class="btn">Sign Up</button>
-              <button class="btn">Log in</button>
+              <a href="{% url 'signup' %}"> <button  class="btn">Sign Up </button> </a>
+              <a href="{% url 'login' %}"> <button class="btn">Log in</button> </a>
             </ul>
         </div>
       </div>
@@ -60,19 +60,19 @@
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-white mb-3">Other Profiles</h5>
                     <ul class="list-unstyled text-muted">
-                        <li><a href="#">Log in as a Veterinarian</a></li>
+                        <li><a href="{% url 'vet_login' %}">Log in as a Veterinarian</a></li>
                         <li><a href="#">Join as a Veterinarian</a></li>
-                        <li><a href="#">Log in as a Trainer/Groomer</a></li>
+                        <li><a href="{% url 'trainer_login' %}">Log in as a Trainer/Groomer</a></li>
                         <li><a href="#">Join as a Trainer/Groomer</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-white mb-3">Quick links</h5>
                     <ul class="list-unstyled text-muted">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Gallery</a></li>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'services' %}">Services</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'gallery' %}">Gallery</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6">
