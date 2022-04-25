@@ -5,3 +5,17 @@ def index(request):
     return render (request, "main_app/index.html")
 def gallery(request):
     return render (request, "main_app/gallery.html")
+def services(request):
+    return render (request, "main_app/services.html")
+def about(request):
+    return render (request, "main_app/about.html")
+def login(request):
+    return render (request, "main_app/login.html")
+def signup(request):
+    return render (request, "main_app/signup.html")
+def trainer_login(request):
+    return render (request, "main_app/trainer_login.html")
+def vet_login(request):
+    return render (request, "main_app/trainer_login.html")
+
+
