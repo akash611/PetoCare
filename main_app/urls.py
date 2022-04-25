@@ -1,7 +1,7 @@
 from . import views
 from django.urls import path
 urlpatterns = [
-    path('', views.index, name="home_page"),
-    
+    path('', views.index, name="home"),
+    path('gallery/', views.gallery, name="gallery")
 
 ]
