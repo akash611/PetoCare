@@ -16,6 +16,8 @@ def signup(request):
 def trainer_login(request):
     return render (request, "main_app/trainer_login.html")
 def vet_login(request):
-    return render (request, "main_app/trainer_login.html")
+    return render (request, "main_app/vet_login.html")
+def forgot_pass(request):
+    return render (request, "main_app/forgot_pass.html")
 
 
