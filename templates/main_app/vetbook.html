@@ -1,0 +1,54 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block extra_head %} 
+<!-- <link rel="stylesheet" href="{% static 'css/login.css' %}"> -->
+{% endblock %}
+{% block content %}
+<div class="bk">
+    <div class="text-center">
+        <form style=" max-width: 360px; margin: auto;" >
+        <h1>Veterinarian Appointment</h1>
+      <h1 class="h3 mb-3 font-weight-normal"></h1>
+      <label for="petname" class="sr-only"></label>
+      <input type="text" id="petname" class="form-control" placeholder="Name of the pet" required autofocus>
+      <P>Select the type of the pet</P>
+      <label for="type of the pet" class="sr-only">Select the type of the pet</label>
+      <select name="type of the pet" id="type of the pet">
+          <option
+             value="Dog">Dog</option>
+          <option 
+             value="Cat">Cat</option>
+          <option
+             value="Others">Others</option>
+      </select>
+      <br>
+      <label for="petbreed" class="sr-only"></label>
+      <input type="text" id="petbreed" class="form-control" placeholder="Breed of the pet" required autofocus>
+      <br>
+      <label for="phonenumber" class="sr-only"></label>
+      <input type="tel" id="phonenumber" class="form-control" placeholder="Contact number" required autofocus>
+      <br>
+      <label for="address" class="sr-only"></label>
+      <input type="text" id="address" class="form-control" placeholder="Address" required autofocus>
+      <p>Select the appointment date</p>
+      <label for="Appointment Date" class="sr-only">Appointment Date</label>
+      <input type="date" id="Appointment Date" class="form-control" placeholder="Appointment Date" required autofocus>
+      <p>Select type of the appointment</p>
+      <label for="type of Appointment" class="sr-only">Select the Appointment type</label>
+      <select name="type of Appointment" id="type of Appointment"> 
+          <option
+             value="veterian appointment">Home visit</option>
+          <option value="doctor appointment">Clinik Visit</option>
+      </select>
+      
+      <div class="mt-3">
+          <button class="btn btn-lg btn-primary btn-block">Book now </button>
+      </div>
+     <br>
+   
+        </form>
+  </div>
+
+
+</div>
+{% endblock %}
