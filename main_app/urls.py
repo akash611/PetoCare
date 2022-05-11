@@ -10,6 +10,8 @@ urlpatterns = [
     path('vet/login/',views.vet_login, name="vet_login"),
     path('trainer/login/',views.trainer_login, name="trainer_login"),
     path('forgotpassword/', views.forgot_pass, name="forgot_pass"),
+    path('join/vet', views.vet_register, name="vet_register"),
+    path('join/trainer', views.trainer_register, name="trainer_register"),
 
     
 
