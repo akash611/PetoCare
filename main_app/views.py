@@ -23,5 +23,8 @@ def vet_register(request):
     return render (request, "main_app/vet_register.html")
 def trainer_register(request):
     return render (request, "main_app/trainer_register.html")
+def vet_book(request):
+    return render (request, "main_app/vetbook.html")
+
 
 
