@@ -1,0 +1,64 @@
+#abt .container h1{
+  padding-left: 550px;
+}
+#abt .slider {
+  margin-bottom: 30px;
+  position: relative;
+}
+#abt .slider .owl-item.active.center .slider-card {
+  transform: scale(1.15);
+  opacity: 1;
+  background: #ff9966;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #ff5e62, #ff9966);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ff5e62, #ff9966);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+}
+
+#abt .slider-card {
+  background: rgb(210, 64, 64);
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+#abt .slider-card img {
+  border-radius: 5px 5px 0px 0px;
+}
+
+#abt .owl-nav .owl-prev {
+  position: absolute;
+  top: calc(50% - 25px);
+  left: 0;
+  opacity: 1;
+  font-size: 30px !important;
+  z-index: 1;
+}
+
+#abt .owl-nav .owl-next {
+  position: absolute;
+  top: calc(50% - 25px);
+  right: 0;
+  opacity: 1;
+  font-size: 30px !important;
+  z-index: 1;
+}
+
+#abt .owl-dots {
+  text-align: center;
+}
+
+#abt .owl-dots .owl-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 10px;
+  background: #ccc !important;
+  margin-left: 3px;
+  margin-right: 3px;
+  outline: none;
+}
+
+#abt .owl-dots .owl-dot.active {
+  background: #f44336 !important;
+}
