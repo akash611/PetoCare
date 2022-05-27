@@ -1,20 +1,11 @@
 {% extends 'main_app/base.html' %}
 {% load static %}
 {% block extra_head %}
-    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
 {% endblock %}
-
-
 {% block content %}
-
-
-
 <div id="srvs">
-   
     <body>
-       
-    
-    
         <!-- Services Start -->
         <div class="container-fluid bg-light pt-5">
             <div class="container py-5">
@@ -23,7 +14,8 @@
                         <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                             <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"></h3>
                             <h3 class="mb-3">Doctor's Appointment</h3>
-                            <p>Book from the list of most trusted and sort after vet doctor's in our country for your pets right from your home</p>
+                            <p>Book from the list of most trusted and sort after vet doctor's in our country for your
+                                pets right from your home</p>
                             <a class="text-uppercase font-weight-bold" href="">Read More</a>
                         </div>
                     </div>
@@ -31,7 +23,8 @@
                         <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                             <h3 class="flaticon-food display-3 font-weight-normal text-secondary mb-3"></h3>
                             <h3 class="mb-3">Pet Grooming</h3>
-                            <p>Just pick a desired grromer for you pet and we check for availability and send them right to your doorstep</p>
+                            <p>Just pick a desired grromer for you pet and we check for availability and send them right
+                                to your doorstep</p>
                             <a class="text-uppercase font-weight-bold" href="">Read More</a>
                         </div>
                     </div>
@@ -47,8 +40,7 @@
             </div>
         </div>
         <!-- Services End -->
-    
-    
+
         <!-- Booking Start -->
         <div class="container-fluid">
             <div class="container">
@@ -57,19 +49,25 @@
                         <div class="bg-primary py-5 px-4 px-sm-5">
                             <form class="py-5">
                                 <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
+                                    <input type="text" class="form-control border-0 p-4" placeholder="Your Name"
+                                        required="required" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
+                                    <input type="email" class="form-control border-0 p-4" placeholder="Your Email"
+                                        required="required" />
                                 </div>
                                 <div class="form-group">
                                     <div class="date" id="date" data-target-input="nearest">
-                                        <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservation Date" data-target="#date" data-toggle="datetimepicker"/>
+                                        <input type="text" class="form-control border-0 p-4 datetimepicker-input"
+                                            placeholder="Reservation Date" data-target="#date"
+                                            data-toggle="datetimepicker" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="time" id="time" data-target-input="nearest">
-                                        <input type="text" class="form-control border-0 p-4 datetimepicker-input" placeholder="Reservation Time" data-target="#time" data-toggle="datetimepicker"/>
+                                        <input type="text" class="form-control border-0 p-4 datetimepicker-input"
+                                            placeholder="Reservation Time" data-target="#time"
+                                            data-toggle="datetimepicker" />
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -89,7 +87,8 @@
                     <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
                         <h4 class="text-secondary mb-3">Going for a vacation?</h4>
                         <h1 class="display-4 mb-4">Book For <span class="text-primary">Your Pet</span></h1>
-                        <p>Labore vero lorem eos sed aliquy ipsum aliquy sed. Vero dolore dolore takima ipsum lorem rebum</p>
+                        <p>Labore vero lorem eos sed aliquy ipsum aliquy sed. Vero dolore dolore takima ipsum lorem
+                            rebum</p>
                         <div class="row py-2">
                             <div class="col-sm-6">
                                 <div class="d-flex flex-column">
@@ -132,7 +131,7 @@
                 </div>
             </div>
         </div>
-    
+
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -141,15 +140,13 @@
         <script src="lib/tempusdominus/js/moment.min.js"></script>
         <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
         <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    
+
         <!-- Contact Javascript File -->
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
-    
+
         <!-- Template Javascript -->
         <script src="{% static 'js/servicemain.js' %}"></script>
     </body>
-
-    
-</div>    
+</div>
 {% endblock %}
