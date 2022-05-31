@@ -1,6 +1,6 @@
-#abt .container h1{
-  padding-left: 550px;
-}
+/* #abt .container h1{
+  padding-left: 550px; */
+/* } */
 #abt .slider {
   margin-bottom: 30px;
   position: relative;
@@ -18,13 +18,19 @@
 }
 
 #abt .slider-card {
-  background: rgb(210, 64, 64);
+  background-image: linear-gradient(to right , #0000ff , #ff0000 )!important;
+  padding: 0px 0px;
+  margin: 50px 15px 90px 15px;
+  border-radius: 5px;
+  box-shadow: 0 15px 45px -20px rgb(0 0 0 / 73%);
+  transform: scale(0.9);
   opacity: 0.5;
   transition: all 0.3s;
 }
 
 #abt .slider-card img {
-  border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 5px 5px;
+  max-height: 300px;
 }
 
 #abt .owl-nav .owl-prev {
