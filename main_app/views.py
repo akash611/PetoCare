@@ -25,6 +25,12 @@ def trainer_register(request):
     return render (request, "main_app/trainer_register.html")
 def vet_book(request):
     return render (request, "main_app/vetbook.html")
-
-
+def trainer_book(request):
+    return render (request, "main_app/trainerbook.html")
+def groomer_book(request):
+    return render (request, "main_app/groomerbook.html")
+def training(request):
+    return render (request, "main_app/training.html")
+def grooming(request):
+    return render (request, "main_app/grooming.html")
 

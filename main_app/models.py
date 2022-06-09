@@ -42,6 +42,7 @@ class Vet(models.Model):
 class Services(models.Model):
     service_id = models.IntegerField(primary_key="True")
     service_type = models.CharField(max_length=20)
+    service_name = models.CharField(max_length=20, default="")
     service_desc = models.CharField(max_length=100)
     fees = models.IntegerField()
 
