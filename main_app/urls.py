@@ -19,6 +19,8 @@ urlpatterns = [
     path('services/training/',views.training, name="training"),
     path('services/grooming/booking/',views.groomer_book, name="groomer_book"),
     path('services/training/booking/',views.trainer_book, name="trainer_book"),
+    path('logout/',views.user_logout, name="logout"),
+
 
 
 

@@ -9,7 +9,6 @@ from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.encoding import force_bytes, force_text
 from django.contrib.auth import authenticate, login, logout
-from . tokens import generate_token
 
 # Create your views here.
 def index(request):
@@ -22,12 +21,12 @@ def about(request):
     return render (request, "main_app/about.html")
 def login(request):
     if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        user=authenticate(username=username, password=password)
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user=authenticate(email=username, password=password)
         if user is not None:
             login(request,user)
-            return redirect('Home')
+            return render(request, "main_app/index.html",)
         else:
             messages.error(request, "Invalid Login Credentials")
     else:
@@ -119,4 +118,8 @@ def training(request):
     return render (request, "main_app/training.html")
 def grooming(request):
     return render (request, "main_app/grooming.html")
-
+def user_logout(request):
+    
+    messages.success(request, "You are logged out")
+    logout(request)
+    return redirect('home')
