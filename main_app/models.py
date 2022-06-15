@@ -10,9 +10,11 @@ ap_status = (("Registered", "Registered"), ("Confirmed",
 # Create your models here.
 
 
-# class PetParent(models.Model):
-#     models.OneToOneField(User, on_delete=models.CASCADE)
-
+class UserDetails(models.Model):
+   user= models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
+   phone_number = models.CharField(max_length=10,unique="True")
+   address = models.CharField(max_length=100,null="True",blank="True")
+   pin = models.CharField(max_length=6,null="True",blank="True")
 
 class Provider(models.Model):
     provider_id = models.IntegerField(primary_key="True")
@@ -41,18 +43,10 @@ class Vet(models.Model):
     image = models.ImageField(upload_to='vet', default="")
 
 
-<<<<<<< HEAD
-class Services(models.Model):
-    service_id = models.IntegerField(primary_key="True")
-    service_type = models.CharField(max_length=20)
-    service_name = models.CharField(max_length=20, default="")
-    service_desc = models.CharField(max_length=100)
-=======
 class Training(models.Model):
     training_id = models.IntegerField(primary_key="True")
     name = models.CharField(max_length=20)
     desc = models.CharField(max_length=100)
->>>>>>> 5c0c7449c0a94828e1ff8eb2c8af7f6244cb78b2
     fees = models.IntegerField()
     image = models.ImageField(upload_to='training', default="")
 
