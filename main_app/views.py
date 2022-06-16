@@ -8,7 +8,7 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.encoding import force_bytes, force_text
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login as auth_login, logout
 
 # Create your views here.
 def index(request):
@@ -20,17 +20,23 @@ def services(request):
 def about(request):
     return render (request, "main_app/about.html")
 def login(request):
-    if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user=authenticate(email=username, password=password)
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        user = authenticate(username=username, password=password)
+        
         if user is not None:
-            login(request,user)
-            return render(request, "main_app/index.html",)
+            auth_login(request, user)
+            fname = user.first_name
+            # messages.success(request, "Logged In Sucessfully!!")
+            return render(request, "main_app/index.html",{"fname":fname})
         else:
-            messages.error(request, "Invalid Login Credentials")
-    else:
-        return render (request, "main_app/login.html")
+            messages.error(request, "Bad Credentials!!")
+            return redirect('home')
+    
+    return render(request, "main_app/login.html")
+
 def signup(request):
     if request.method == "POST":
         username = request.POST['username']
