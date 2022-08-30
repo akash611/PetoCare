@@ -13,12 +13,17 @@ urlpatterns = [
     path('trainer/login/',views.trainer_login, name="trainer_login"),
     path('forgotpassword/', views.forgot_pass, name="forgot_pass"),
     path('join/vet/', views.vet_register, name="vet_register"),
+
+
     path('join/trainer/', views.trainer_register, name="trainer_register"),
-    path('vet/booking/',views.vet_book, name="vet_book"),
+
+    path('services/vet/booking/<int:vet_id>',views.vet_book, name="vet_book"),
     path('services/grooming/',views.grooming, name="grooming"),
     path('services/training/',views.training, name="training"),
-    path('services/grooming/booking/',views.groomer_book, name="groomer_book"),
-    path('services/training/booking/',views.trainer_book, name="trainer_book"),
+    path('services/grooming/booking/<int:grooming_id>',views.groomer_book, name="groomer_book"),
+    path('services/training/booking/<int:training_id>',views.trainer_book, name="trainer_book"),
+    path('services/vet',views.vet,name="vet"),
+    path('services/orders',views.orders, name="orders"),
     path('logout/',views.user_logout, name="logout"),
 
 

@@ -9,6 +9,8 @@ from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.encoding import force_bytes, force_text
 from django.contrib.auth import authenticate, login as auth_login, logout
+from main_app.models import UserDetails ,Provider, Vet, Training, Grooming, VetBooking, TrainingBooking, GroomingBooking
+import datetime
 
 # Create your views here.
 def index(request):
@@ -114,16 +116,73 @@ def vet_register(request):
     return render (request, "main_app/vet_register.html")
 def trainer_register(request):
     return render (request, "main_app/trainer_register.html")
-def vet_book(request):
-    return render (request, "main_app/vetbook.html")
-def trainer_book(request):
-    return render (request, "main_app/trainerbook.html")
-def groomer_book(request):
+def vet_book(request,vet_id ):
+   if request.method=="POST":
+    current_user = request.user
+    vet=Vet.objects.get(pk=vet_id)
+    pet_name=request.POST['pet_name']
+    pet_type=request.POST['pet_type']
+    pet_breed=request.POST['pet_breed']
+    illness_details=request.POST['illness_details']
+    phone_no=request.POST['phone_no']
+    # address=request.POST['address']
+    v=VetBooking(pp_id=current_user,vet_id=vet,pet_name=pet_name,pet_type=pet_type,pet_breed=pet_breed,illness_details=illness_details,phone_number=phone_no,appo_date_time=datetime.datetime.now())
+    v.save()
+    redirect('home')
+   return render (request, "main_app/vetbook.html")  
+
+
+
+
+
+def trainer_book(request,training_id):
+    if request.method=="POST":
+        current_user = request.user
+        training=Training.objects.get(pk=training_id)
+        pet_name=request.POST['pet_name']
+        pet_type=request.POST['pet_type']
+        pet_breed=request.POST['pet_breed']
+        phone_no=request.POST['phone_no']
+        # illness_details=request.POST['illness_details']
+        address=request.POST['address']
+        t=TrainingBooking(pp_id=current_user,training_id=training,pet_name=pet_name,pet_type=pet_type,pet_breed=pet_breed,address=address,phone_number=phone_no,appo_date_time=datetime.datetime.now())
+        t.save()
+        redirect('home')
+    return render (request, "main_app/trainerbook.html")  
+def groomer_book(request,grooming_id):
+    if request.method=="POST":
+        current_user = request.user
+        grooming=Training.objects.get(pk=grooming_id)
+        pet_name=request.POST['pet_name']
+        pet_type=request.POST['pet_type']
+        pet_breed=request.POST['pet_breed']
+        # illness_details=request.POST['illness_details']
+        address=request.POST['address']
+        phone_no=request.POST['phone_no']
+        g=GroomingBooking(pp_id=current_user,grooming_id=grooming,pet_name=pet_name,pet_type=pet_type,pet_breed=pet_breed,address=address,phone_number=phone_no,appo_date_time=datetime.datetime.now())
+        g.save()
+        redirect('home')
     return render (request, "main_app/groomerbook.html")
 def training(request):
-    return render (request, "main_app/training.html")
+    services = Training.objects.all()
+    context = {'services':services}
+    return render (request, "main_app/training.html",context)
 def grooming(request):
-    return render (request, "main_app/grooming.html")
+    services =Grooming.objects.all()
+    context = {'services':services}
+    return render (request, "main_app/grooming.html",context)
+def vet(request):
+    services = Vet.objects.all()
+    context = {'services':services}
+    return render (request, "main_app/vet.html",context)
+def orders(request):
+    vet_orders=VetBooking.objects.all()
+    train_orders=TrainingBooking.objects.all()
+    groom_orders=GroomingBooking.objects.all()
+    context = {'vet_orders':vet_orders,'train_orders':train_orders,'groom_orders' :groom_orders}
+
+
+    return render (request, "main_app/orders.html",context)
 def user_logout(request):
     
     messages.success(request, "You are logged out")

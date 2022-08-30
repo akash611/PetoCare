@@ -61,28 +61,33 @@ class Grooming(models.Model):
 
 class VetBooking(models.Model):
     booking_id = models.IntegerField(primary_key="True")
-    pp_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    pp_id = models.ForeignKey(User, on_delete=models.CASCADE,null="True",blank="True")
     vet_id = models.ForeignKey(Vet, on_delete=models.CASCADE)
     pet_name = models.CharField(max_length=50)
     pet_type = models.CharField(max_length=50)
     pet_breed = models.CharField(max_length=50)
+    phone_number = models.CharField(max_length=10, default="")
+    address = models.CharField(max_length=100,default="")
     illness_details = models.CharField(max_length=100)
     appo_date_time = models.DateTimeField()
-    appo_full_date_time = models.DateTimeField()
+    appo_full_date_time = models.DateTimeField(null="True",blank="True")
     appo_status = models.CharField(
         max_length=100, choices=ap_status, default="Registered")
+    
 
 
 class TrainingBooking(models.Model):
     booking_id = models.IntegerField(primary_key="True")
     pp_id = models.ForeignKey(User, on_delete=models.CASCADE)
     training_id = models.ForeignKey(Training, on_delete=models.CASCADE)
-    provider_id = models.ForeignKey(Provider, on_delete=models.CASCADE)
+    provider_id = models.ForeignKey(Provider, on_delete=models.CASCADE, null="True",blank="True")
     pet_name = models.CharField(max_length=50,null="True",blank="True")
     pet_type = models.CharField(max_length=50)
     pet_breed = models.CharField(max_length=50,null="True",blank="True")
+    phone_number = models.CharField(max_length=10,default="")
+    address = models.CharField(max_length=100,default="")
     appo_date_time = models.DateTimeField()
-    appo_full_date_time = models.DateTimeField()
+    appo_full_date_time = models.DateTimeField(null="True",blank="True")
     appo_status = models.CharField(
         max_length=100, choices=ap_status, default="Registered")
 
@@ -90,12 +95,14 @@ class TrainingBooking(models.Model):
 class GroomingBooking(models.Model):
     booking_id = models.IntegerField(primary_key="True")
     pp_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    grooming_id = models.ForeignKey(Grooming, on_delete=models.CASCADE)
+    grooming_id = models.ForeignKey(Grooming, on_delete=models.CASCADE ,null="True",blank="True")
     provider_id = models.ForeignKey(Provider, on_delete=models.CASCADE)
     pet_name = models.CharField(max_length=50,null="True",blank="True")
     pet_type = models.CharField(max_length=50)
     pet_breed = models.CharField(max_length=50,null="True",blank="True")
+    phone_number = models.CharField(max_length=10, default="")
+    address = models.CharField(max_length=100,default="")
     appo_date_time = models.DateTimeField()
-    appo_full_date_time = models.DateTimeField()
+    appo_full_date_time = models.DateTimeField(null="True",blank="True")
     appo_status = models.CharField(
         max_length=100, choices=ap_status, default="Registered")

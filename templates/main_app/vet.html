@@ -14,21 +14,21 @@
     <section id="slider" class="pt-5">
         <div class="container">
             <h3 class="text-center"><b></b></h3>
+            
             <div class="slider">
                 <div class="owl-carousel">
-                    {% for s in services %}
-                    <div class="slider-card">
+                    {% for s in services %}    
+                    <div class="slider-card" >
                         <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="{{s.image.url}}" alt="">
+                            <img style="max-height:300px" src="{{s.image.url}}" alt="" >
                         </div>
                         <h5 class="mb-0 text-center"><b>{{s.name}}</b></h5>
-                        <p class="text-center p-4">{{s.desc}}</p>
+                        <p class="text-center p-4">{{s.address}} <br> {{s.city}}-{{s.pin}} </p>
                         <div class="d-flex justify-content-center align-items-center mb-4">
-                            <a href="{% url 'groomer_book' grooming_id=s.grooming_id %}"> <button class="btn">Book @ &#x20b9; {{s.fees}}</button> </a>
-                        </div>
+                        <a href="{% url 'vet_book' vet_id=s.vet_id %}"> <button class="btn">Book @ &#x20b9; {{s.fees}}</button> </a>    
                     </div>
-                    {% endfor %}
                 </div>
+                {% endfor %}
             </div>
         </div>
     </section>

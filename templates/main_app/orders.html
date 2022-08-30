@@ -1,0 +1,41 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block content %}
+<div id="orders">
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1 class="fw-bold">Vet Orders</h1>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Vet Name</th>
+                                        <th>Descritpion</th>
+                                    </tr>
+                                </thead
+                                <tbody>
+                                    {% for p in vet_orders %}
+                                        <tr>
+                                            <td>{{ p.booking_id }} </td>
+                                            <td>{{ p.vet_name }} </td>
+                                            <td>{{ p.description }} </td>
+                                            <td>{{ p.price }} </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock %}
