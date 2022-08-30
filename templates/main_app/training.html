@@ -1,0 +1,42 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block extra_head %}
+{% load static %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/booking.css' %}">
+{% endblock %}
+{% block content %}
+{% load static %}
+<div class="booking">
+    
+    <section id="slider" class="pt-5">
+        <div class="container">
+            <h3 class="text-center"><b></b></h3>
+            <div class="slider">
+                <div class="owl-carousel">
+                    {% for s in services %}
+                    <div class="slider-card">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <img src="{{s.image.url}}" alt="">
+                        </div>
+                        <h5 class="mb-0 text-center"><b>{{s.name}}</b></h5>
+                        <p class="text-center p-4">{{s.desc}}</p>
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                            <a href="{% url 'trainer_book' training_id=s.training_id %}"> <button class="btn">Book @ &#x20b9; {{s.fees}}</button> </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/about.js' %}"></script>
+</div>
+{% endblock %}

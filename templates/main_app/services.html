@@ -21,7 +21,7 @@
                         <h5 class="mb-0 text-center"><b>Vet Booking</b></h5>
                         <p class="text-center p-4">Thank you for choosing PetoCare to take care of your loved one.</p>
                         <div class="d-flex justify-content-center align-items-center mb-4">
-                            <a href=""> <button class="btn">Book Now</button> </a>
+                            <a href="{% url 'vet' %}"> <button class="btn">Book Now</button> </a>
                         </div>
                         
                     </div>
@@ -32,7 +32,7 @@
                         <h5 class="mb-0 text-center"><b>Grooming Booking</b></h5>
                         <p class="text-center p-4">Thank you for choosing PetoCare to take care of your loved one.</p>
                         <div class="d-flex justify-content-center align-items-center mb-4">
-                            <a href=""> <button class="btn">Book Now</button> </a>
+                            <a href="{% url 'grooming' %}"> <button class="btn">Book Now</button> </a>
                         </div>
                     </div>
                     <div class="slider-card">
@@ -42,7 +42,7 @@
                         <h5 class="mb-0 text-center"><b>Training Booking</b></h5>
                         <p class="text-center p-4">Thank you for choosing PetoCare to take care of your loved one.</p>
                         <div class="d-flex justify-content-center align-items-center mb-4">
-                            <a href=""> <button class="btn">Book Now</button> </a>
+                            <a href="{% url 'training' %}"> <button class="btn">Book Now</button> </a>
                         </div>
                     </div>
                 </div>
@@ -53,6 +53,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'js/about.js' %}"></script>
+    <script src="{% static 'js/services.js' %}"></script>
 </div>
 {% endblock %}

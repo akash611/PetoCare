@@ -33,7 +33,11 @@
 .header a:hover{
     color:red !important;
 }
+li .nav-item{
+    color: white !important;
+    font-weight: 500;  
 
+}
 
 .header .btn:hover{
     background-color: white;
@@ -54,11 +58,12 @@ footer a:link {
       
 footer a:visited {
     text-decoration: none;
+    color:white !important;
 }
       
 footer a:hover {
     text-decoration: none;
-    color:rgb(255, 0, 0);
+    color:rgb(255, 255, 0) !important;
 }
       
 footer  a:active {
@@ -68,7 +73,7 @@ footer p{
     color: white !important;
 }
 #idx p{
-    color: #1200b6;
+    color: #ff0000;
 }
 
 .carousel-item .btn{
@@ -89,5 +94,8 @@ footer p{
 }
 
 .carousel-caption{
- color: #12048d;
+ color: #ffffff;
+ background-color:  rgba(255,0,0,.5);
+ border-radius: 25px;
+ padding: 15px;
 }
